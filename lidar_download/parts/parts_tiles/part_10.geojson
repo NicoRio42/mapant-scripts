@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "part_1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::2154" } },
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 6579, "TILES_500m": 6.0, "Shape_Leng": 2000.0, "Shape_Area": 250000.0 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 934000.0, 6595500.0 ], [ 934500.0, 6595500.0 ], [ 934500.0, 6595000.0 ], [ 934000.0, 6595000.0 ], [ 934000.0, 6595500.0 ] ] ] ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 6581, "TILES_500m": 4.0, "Shape_Leng": 2000.0, "Shape_Area": 250000.0 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 935000.0, 6596000.0 ], [ 935500.0, 6596000.0 ], [ 935500.0, 6595500.0 ], [ 935000.0, 6595500.0 ], [ 935000.0, 6596000.0 ] ] ] ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 6582, "TILES_500m": 1.0, "Shape_Leng": 2000.0, "Shape_Area": 250000.0 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 934500.0, 6596000.0 ], [ 935000.0, 6596000.0 ], [ 935000.0, 6595500.0 ], [ 934500.0, 6595500.0 ], [ 934500.0, 6596000.0 ] ] ] ] } }
+]
+}

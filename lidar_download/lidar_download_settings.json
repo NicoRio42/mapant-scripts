@@ -1,0 +1,6 @@
+{
+    "ftp_adress": "datacarto.georhonealpes.fr",
+    "ftp_folder": "/opendata/LIDAR_FrancoGenevois/LIDAR/",
+    "file_generic_name": "11555_Grand-Geneve_SemisLidar_",
+    "file_extention": ".laz"
+}
