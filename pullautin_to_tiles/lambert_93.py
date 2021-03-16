@@ -1,5 +1,7 @@
 import geojson
 import math
+import os
+from shutil import copyfile
 
 import helpers as hp
 
@@ -46,3 +48,24 @@ if __name__ == "__main__":
     print(max_tile_size/math.pow(2, 12))
     print(tile_exemple)
     print(tile_exemple_2)
+
+    lidar_index_lambert_93 = hp.load_geojson_file("lambert_93_index_files\\lidar_index_lambert_93.geojson")
+    try:
+        png_files = [f for f in os.listdir("in") if f.endswith(".png")]
+        pgw_files = [f for f in os.listdir("in") if f.endswith(".pgw")]
+    except FileNotFoundError:
+        print("There is no \in directory.")
+    except:
+        print("An error occured.")
+    
+    hp.make_dir_if_doesnt_exist("tiles")
+    hp.make_dir_if_doesnt_exist("tiles\\12")
+
+    for png in png_files:
+        tile_number = int(png[30:36])
+        tile = [t for t in lidar_index_lambert_93["features"] if t["properties"]["TILES_500m"] == tile_number]
+        point = tile[0]["geometry"]["coordinates"][0][0][0]
+        tile_coord = lambert_93_to_tile_num(point[0], point[1], slipy_map_origin, max_tile_size, 12)
+        hp.make_dir_if_doesnt_exist("tiles\\12\\" + str(tile_coord[0]))
+        copyfile(("in\\" + png), ("tiles\\12\\" + str(tile_coord[0]) + "\\" + str(tile_coord[1]) + ".png"))
+        
