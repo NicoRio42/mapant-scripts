@@ -76,3 +76,10 @@ def int_to_str_add_zeros(number):
         string = string + '0'
     string = string + str(number)
     return string
+
+def make_dir_if_doesnt_exist(file_path):
+    """ Create a directory if it doesn't already exist at the given 
+    path
+    """
+    if not os.path.exists(file_path):
+        os.mkdir(file_path)
