@@ -21,16 +21,22 @@ if not os.path.exists("out_overlap"):
 
 print("Part number ?")
 part_number = input()
-tiles_overlap_file = "parts_tiles_overlap\\part_" + part_number + "_overlap.geojson"
+tiles_overlap_file = (
+    "parts_tiles_overlap\\part_" + part_number + "_overlap.geojson"
+)
 with open(tiles_overlap_file, "r") as read_file:
     tiles_overlap = json.load(read_file)
 
-# For files in list, 
+# For files in list,
 done_files = 0
 total_files = len(png_files)
 for f in png_files:
     tile_number = int(f[30:36])
-    tile = [t for t in tiles_overlap["features"] if t["properties"]["TILES_500m"] == tile_number]
+    tile = [
+        t
+        for t in tiles_overlap["features"]
+        if t["properties"]["TILES_500m"] == tile_number
+    ]
 
     if tile:
         copyfile(("in\\" + f), ("out_overlap\\" + f))
@@ -43,7 +49,11 @@ done_files = 0
 total_files = len(pgw_files)
 for f in pgw_files:
     tile_number = int(f[30:36])
-    tile = [t for t in tiles_overlap["features"] if t["properties"]["TILES_500m"] == tile_number]
+    tile = [
+        t
+        for t in tiles_overlap["features"]
+        if t["properties"]["TILES_500m"] == tile_number
+    ]
 
     if tile:
         copyfile(("in\\" + f), ("out_overlap\\" + f))

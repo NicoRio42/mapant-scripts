@@ -28,7 +28,9 @@ for f in png_files:
     else:
         copyfile(("in\\" + f), ("out_no_depr\\" + f))
     done_files += 1
-    print(str(done_files) + " png files done under a total of " + str(total_files))
+    print(
+        str(done_files) + " png files done under a total of " + str(total_files)
+    )
 
 # Copying pgw files
 done_files = 0
@@ -40,4 +42,6 @@ for f in pgw_files:
     else:
         copyfile(("in\\" + f), ("out_no_depr\\" + f))
     done_files += 1
-    print(str(done_files) + " pgw files done under a total of " + str(total_files))
+    print(
+        str(done_files) + " pgw files done under a total of " + str(total_files)
+    )
