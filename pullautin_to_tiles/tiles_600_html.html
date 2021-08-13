@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" type="image/gif" href="logo.gif" />
   <title>Leaflet Preview</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +30,10 @@
       var map = L.map('map').setView([-11.264612212504435, 42.978515625], 12);
       L.tileLayer('file:///C%3A/Users/nicol/Documents/%2311 Informatique/Python/mapant/scripts/pullautin_to_tiles/tiles/{z}/{x}/{y}.png', {
         minZoom: 0,
-        maxZoom: 12,
+        maxZoom: 14,
         tileSize: 256,
+        unloadInvisibleTiles: false,
+        continuousWorld: true,
         tms: false,
         attribution: ''
       }).addTo(map);
