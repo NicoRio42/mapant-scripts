@@ -8,8 +8,6 @@ dist
 temp
 tiles
 tiles_save
-parts
-parts_tiles_overlap
 .pytest_cache
 __pycache__
 in_up
